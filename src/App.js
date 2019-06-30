@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
         visible: false,
         
-        data: []
+        data: [],
+        data1:[]
     }
     
 }
@@ -28,9 +29,10 @@ componentWillMount(agentName) {
 }
   
    ios = async() => {
-     let res = await axios.get(`https://www.metaweather.com/api/location/search/?query=dallas`)
-  //axios.get(`http://jsonplaceholder.typicode.com/users`)  
-     let {data1} = res.data;
+     //let res = await axios.get(`https://www.metaweather.com/api/location/search/?query=dallas`)
+ // let res = await axios.get(`https://cors-anywhere.herokuapp.com/http://jsonplaceholder.typicode.com/users`)  
+ let res = await axios.get(`https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=dallas`)  
+ let {data1} = res.data;
      this.setState({ data : data1 });
      console.log(data1)
     }
@@ -40,7 +42,7 @@ componentWillMount(agentName) {
   render () {
     return (
       <div>
-        {this.state.data}
+        {this.state.data.name}
       </div>
     );
   }
