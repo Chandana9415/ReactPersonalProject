@@ -42,7 +42,9 @@ componentWillMount(agentName) {
   render () {
     return (
       <div>
-        {this.state.data.name}
+        {this.state.data.title}
+        {this.state.data.location_type}
+
       </div>
     );
   }
