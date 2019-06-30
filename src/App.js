@@ -1,39 +1,49 @@
-import React, { Component } from 'react'
+import React,{Component} from 'react';
+import './App.css';
+import Contacts from './components/contacts';
 import axios from 'axios';
 
-    export class App extends Component {
-     
-      constructor(props) {
-        super(props);
-        this.state = {
-            visible: false,
-            
-            data: []
-        }
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        visible: false,
         
+        data: []
+    }
+    
+}
+
+componentWillMount(agentName) {
+  // const response = await
+  // const https = require('https');
+
+  // const agent = new https.Agent({
+  //     rejectUnauthorized: false
+  // });
+
+  this.ios();
+
+}
+  
+   ios = async() => {
+     let res = await axios.get(`https://www.metaweather.com/api/location/search/?query=dallas`)
+  //axios.get(`http://jsonplaceholder.typicode.com/users`)  
+     let {data1} = res.data;
+     this.setState({ data : data1 });
+     console.log(data1)
     }
 
-      componentDidMount() {
-        const https = require('https');
-        const agent = new https.Agent({
-          rejectUnauthorized: false
-      });
 
-      axios.get(`http://jsonplaceholder.typicode.com/users`,{ httpsAgent: agent })
-      .then(res => {
-        const data = res.data;
-        this.setState({ data });
-      })
-      }
 
-      render() {
-        return(
-          <div>
-        {this.state.data.map(function (item, key) {
-          return (
-          <div>
-              {item}
-          </div>  )})}
-          </div>)}
-      }
-    export default App;
+  render () {
+    return (
+      <div>
+        {this.state.data}
+      </div>
+    );
+  }
+}
+
+export default App;
