@@ -30,22 +30,38 @@ componentDidMount(agentName) {
   
    ios = async() => {
      //let res = await axios.get(`https://www.metaweather.com/api/location/search/?query=dallas`)
- //let res = await axios.get(`https://cors-anywhere.herokuapp.com/http://jsonplaceholder.typicode.com/users`)  
- let res = await axios.get(`https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=dallas`)  
- let {data1} = res.data;
-     this.setState({ data : data1 });
-     console.log(data1)
+ //await axios.get(`https://cors-git.herokuapp.com/http://jsonplaceholder.typicode.com/users`)  
+ await axios.get(`https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=san`)  
+    .then(res => {
+      const data = res.data;
+      this.setState({data});
+    })
+
+ //  let {data1} = res.data;
+//      this.setState({ data:data1 });
+    //  console.log(data1)
     }
 
 
 
   render () {
-    console.log(this.state.data.title)
+    // console.log(this.state.data.name)
     return (
       
       <div>
         {this.state.data.map(function(item,key) {
-          return(<div> {item.title}</div>)
+          return(
+            <div class="card">
+              <div class="card-body">
+            
+            {item.title} <br />
+          {item.location_type}<br />
+            {item.woeid}<br />
+          {item.latt_long}<br />
+            
+            </div>
+            </div>
+            )
          
         })}
         {/* {this.state.data.title} */}
