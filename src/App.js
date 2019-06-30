@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
-import Contacts from './components/contacts';
+// import Contacts from './components/contacts';
 import axios from 'axios';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
     
 }
 
-componentWillMount(agentName) {
+componentDidMount(agentName) {
   // const response = await
   // const https = require('https');
 
@@ -30,7 +30,7 @@ componentWillMount(agentName) {
   
    ios = async() => {
      //let res = await axios.get(`https://www.metaweather.com/api/location/search/?query=dallas`)
- // let res = await axios.get(`https://cors-anywhere.herokuapp.com/http://jsonplaceholder.typicode.com/users`)  
+ //let res = await axios.get(`https://cors-anywhere.herokuapp.com/http://jsonplaceholder.typicode.com/users`)  
  let res = await axios.get(`https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=dallas`)  
  let {data1} = res.data;
      this.setState({ data : data1 });
@@ -40,10 +40,16 @@ componentWillMount(agentName) {
 
 
   render () {
+    console.log(this.state.data.title)
     return (
+      
       <div>
-        {this.state.data.title}
-        {this.state.data.location_type}
+        {this.state.data.map(function(item,key) {
+          return(<div> {item.title}</div>)
+         
+        })}
+        {/* {this.state.data.title} */}
+        {/* {this.state.data.location_type} */}
 
       </div>
     );
