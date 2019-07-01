@@ -1,73 +1,113 @@
-import React,{Component} from 'react';
-import './App.css';
-// import Contacts from './components/contacts';
-import axios from 'axios';
+import React, { Component } from "react";
+import Button from 'react-bootstrap/Button'
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
+import {Robot} from './components/Robot'
+import {Weather} from './components/Weather'
+import {Expression} from './components/Expression'
+import {Pawn} from './components/Pawn'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+} from 'react-router-dom'
+
+
+const routes = [
+  {
+    path: '/robot',
+    exact: true,
+    sidebar: () => <div></div>,
+    main: () => <h2><Robot /></h2>
+  },
+  {
+    path: '/pawn',
+    sidebar: () => <div></div>,
+    main: () => <h2><Pawn /></h2>
+  },
+  {
+    path: '/expression',
+    sidebar: () => <div></div>,
+    main: () => <h2><Expression /></h2>
+  },
+  {
+    path: '/weather',
+    sidebar: () => <div></div>,
+    main: () => <h2><Weather /></h2>
+  }
+  
+]
+
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-        visible: false,
-        
-        data: [],
-        data1:[]
-    }
-    
-}
-
-componentDidMount(agentName) {
-  // const response = await
-  // const https = require('https');
-
-  // const agent = new https.Agent({
-  //     rejectUnauthorized: false
-  // });
-
-  this.ios();
-
-}
-  
-   ios = async() => {
-     //let res = await axios.get(`https://www.metaweather.com/api/location/search/?query=dallas`)
- //await axios.get(`https://cors-git.herokuapp.com/http://jsonplaceholder.typicode.com/users`)  
- await axios.get(`https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=san`)  
-    .then(res => {
-      const data = res.data;
-      this.setState({data});
-    })
-
- //  let {data1} = res.data;
-//      this.setState({ data:data1 });
-    //  console.log(data1)
-    }
-
-
-
-  render () {
-    // console.log(this.state.data.name)
+  render() {
     return (
-      
-      <div>
-        {this.state.data.map(function(item,key) {
-          return(
-            <div class="card">
-              <div class="card-body">
-            
-            {item.title} <br />
-          {item.location_type}<br />
-            {item.woeid}<br />
-          {item.latt_long}<br />
-            
-            </div>
-            </div>
-            )
-         
-        })}
-        {/* {this.state.data.title} */}
-        {/* {this.state.data.location_type} */}
 
-      </div>
+      <Router>
+     
+        <div style={{ display: 'flex'}}>
+          <div style={{ width: '50%'}}>
+          
+
+            <ul style={{ listStyleType: 'none', padding: '0' }}>
+                <li><button style={{ width:'180px', height:'180px',hover: 'true', marginTop:'15px'}}>
+                  <Link to="/robot" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}> 
+                   <h1>ROBOT</h1>
+                  </Link> </button> </li>
+
+                <li><button style={{ width:'180px', height:'180px', hover: 'true'}}>
+                  <Link to="/pawn" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}> 
+                  <h1>PAWN</h1>
+                  </Link> </button></li>
+
+                <li><button style={{width:'180px', height:'180px',hover: 'true'}}>
+                  <Link to="/expression" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}>
+                  <h1>EXPRESSION</h1> 
+                  </Link> </button> </li>
+
+                  <li><button style={{ width:'180px', height:'180px',hover: 'true'}}>
+                  <Link to="/weather" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}>
+                  <h1>WEATHER</h1> 
+                  </Link> </button> </li>
+
+                   
+               
+            </ul>
+          
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+                component={route.sidebar}
+              />
+            ))}
+          </div>
+
+          <div style={{ flex: 1, padding: '10px' }}>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+                component={route.main}
+              />
+            ))}
+          </div>
+        </div>
+
+      </Router>
+
+//      <div>
+//        <div className="d-flex flex-column">
+//        <ButtonToolbar>
+//   <Button variant="primary">Weather</Button>
+//   <Button variant="secondary">Robot</Button>
+//   <Button variant="success">Expression</Button>
+//   <Button variant="warning">Pawn</Button>
+  
+// </ButtonToolbar>
+//        </div>
+//        </div>
     );
   }
 }
