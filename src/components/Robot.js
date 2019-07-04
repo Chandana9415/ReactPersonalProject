@@ -25,46 +25,23 @@ export class Robot extends Component {
         event.preventDefault();
         var temp = document.getElementById('name').value;
 
-        //console.log(temp);
-        //console.log(this.state.url)
         this.setState({ url : 'https://robohash.org/'.concat(temp) })
         this.state.url.concat(temp);
-        //console.log(this.state.url);
-        // axios.get(`https://robohash.org/`+temp)
-        // .then(res => {
-        //   const data = res.data;
-        //   this.setState({ data : data });
-        //   console.log(base64.encode(res.data));
-
-        // })
-
+    
          this.render();
 
     }
 
     render() {
-        // console.log(this.state.data);
-        return (<div>
+        return (<div style={{ alignContent:'left',paddingTop:'10%',paddingRight:'50%'}}>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="ex:San Fransisco" id="name" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '300px' }} />
-
-                {/* <input type="button" id="name" placeholder="Enter name" size="100" /> */}
-                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', background: "linear-gradient(to right bottom, #800000, #174c83)" }} />
+                <input type="text" placeholder="What robot are you?" id="name" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%',height:'100%' }} />
+                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '100%',width:'100%', background: 'pink' }} />
             </form>
-            {/* {this.state.url} */}
-
-            <img src={this.state.url} />
-            {/* <img src="https://robohash.org/".ap/> */}
-
-
-            {/* <img src="https://robohash.org/a"/> */}
-
-
-            {/* {this.state.data.map(function(item){
-                    return(<div>
-                        <img src={item}/>
-                        </div>)
-            })} */}
+           
+            <img src={this.state.url} style={{width : '100%', height:'100%', border: '20px solid black'}}/>
+            
+            
         </div>);
     }
 

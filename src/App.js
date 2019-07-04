@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Button from 'react-bootstrap/Button'
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
+
 import {Robot} from './components/Robot'
 import {Weather} from './components/Weather'
 import {Expression} from './components/Expression'
@@ -48,24 +47,24 @@ class App extends Component {
           <div style={{ width: '50%'}}>
           
 
-            <ul style={{ listStyleType: 'none', padding: '0' }}>
+            <ul style={{ listStyleType: 'none', padding: '50' }}>
                 <li><button style={{ width:'180px', height:'180px',hover: 'true', marginTop:'15px'}}>
-                  <Link to="/robot" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}> 
+                  <Link to="/robot" style={{color:'black', fontWeight:'bold',textDecoration:'none'}}> 
                    <h1>ROBOT</h1>
                   </Link> </button> </li>
 
                 <li><button style={{ width:'180px', height:'180px', hover: 'true'}}>
-                  <Link to="/pawn" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}> 
+                  <Link to="/pawn" style={{color:'black', fontWeight:'bold',textDecoration:'none'}}> 
                   <h1>PAWN</h1>
                   </Link> </button></li>
 
                 <li><button style={{width:'180px', height:'180px',hover: 'true'}}>
-                  <Link to="/expression" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}>
+                  <Link to="/expression" style={{color:'black', fontWeight:'bold',textDecoration:'none'}}>
                   <h1>EXPRESSION</h1> 
                   </Link> </button> </li>
 
                   <li><button style={{ width:'180px', height:'180px',hover: 'true'}}>
-                  <Link to="/weather" style={{color:'#FFFFFF', fontWeight:'bold',textDecoration:'none'}}>
+                  <Link to="/weather" style={{color:'black', fontWeight:'bold',textDecoration:'none'}}>
                   <h1>WEATHER</h1> 
                   </Link> </button> </li>
 
@@ -83,7 +82,7 @@ class App extends Component {
             ))}
           </div>
 
-          <div style={{ flex: 1, padding: '10px' }}>
+          <div style={{ flex: 1 }}>
             {routes.map((route) => (
               <Route
                 key={route.path}
@@ -97,17 +96,6 @@ class App extends Component {
 
       </Router>
 
-//      <div>
-//        <div className="d-flex flex-column">
-//        <ButtonToolbar>
-//   <Button variant="primary">Weather</Button>
-//   <Button variant="secondary">Robot</Button>
-//   <Button variant="success">Expression</Button>
-//   <Button variant="warning">Pawn</Button>
-  
-// </ButtonToolbar>
-//        </div>
-//        </div>
     );
   }
 }
