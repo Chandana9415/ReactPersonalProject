@@ -25,6 +25,8 @@ export class Weather extends Component {
       .then(res => {
         const data = res.data;
         this.setState({ api1data: data[0].woeid });
+        this.setState({api3data : data.weather_state_abbr})
+        console.log(this.state.api3data)
       })
     ]);
 
@@ -38,6 +40,7 @@ export class Weather extends Component {
         this.setState({ api2data: data2.consolidated_weather });
      
       })
+
 
 
   }

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import base64 from 'base-64'
 
 export class Robot extends Component {
 
@@ -10,38 +8,45 @@ export class Robot extends Component {
             visible: false,
             data: [],
             id: 10,
-            url:'',//'https://robohash.org/'
+            url: '',
+            url2: '',
+            url3: '',
+            url4: '',
+
         }
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
-    componentDidMount() {
 
-
-
-    }
     async handleSubmit(event) {
         event.preventDefault();
-        var temp = document.getElementById('name').value;
 
-        this.setState({ url : 'https://robohash.org/'.concat(temp) })
-        this.state.url.concat(temp);
-    
-         this.render();
+        let temp = 'https://robohash.org/' + document.getElementById('name').value;
+        this.setState({
+            url: temp,
+            url2: temp + '/?set=set2',
+            url3: temp + '/?set=set3',
+            url4: temp + '/?set=set4'
+        })
+        
+        this.render();
 
     }
 
     render() {
-        return (<div style={{ alignContent:'left',paddingTop:'10%',paddingRight:'50%'}}>
+        return (<div style={{ textAlign: "center" }}>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="What robot are you?" id="name" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%',height:'100%' }} />
-                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '100%',width:'100%', background: 'pink' }} />
+                <input type="text" placeholder="What robot are you?" id="name" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%', height: '100%' }} />
+                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '100%', width: '100%', background: 'pink', alignContent: 'center' }} />
             </form>
-           
-            <img src={this.state.url} style={{width : '100%', height:'100%', border: '20px solid black'}}/>
-            
-            
+
+            <img src={this.state.url} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
+            <img src={this.state.url2} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
+            <img src={this.state.url3} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
+            <img src={this.state.url4} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
+
+
         </div>);
     }
 

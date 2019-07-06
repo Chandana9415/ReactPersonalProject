@@ -12,10 +12,6 @@ code {
     monospace;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 
 
 .header {
@@ -23,25 +19,7 @@ code {
   padding: 32px;
 }
 
-.row {
-  display: -ms-flexbox; /* IE 10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE 10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
 
-/* Create two equal columns that sits next to each other */
-.column {
-  -ms-flex: 50%; /* IE 10 */
-  flex: 50%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
 
 /* Style the buttons */
 .btn {
@@ -61,3 +39,36 @@ code {
   background-color: #666;
   color: white;
 }
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html{
+  background-color:#eee;
+}
+.container{
+  margin: 20px auto;
+  width:400px;
+  height:400px;
+  background-color:#fff;
+  display:grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+  .box{
+    background-color:#333;
+    padding:20px;
+    border-radius:10px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-family:sans-serif;
+  }
+
+
