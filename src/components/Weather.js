@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import './index.css'
 
 export class Weather extends Component {
 
@@ -12,6 +12,8 @@ export class Weather extends Component {
       api1data: [],
       api2data: [],
       woeid: [],
+      abbr: [],
+      api4data: [],
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,15 +21,20 @@ export class Weather extends Component {
   async handleSubmit(event) {
     console.log("Button clicked yay, time to get the woied")
     event.preventDefault();
-    var temp = document.getElementById('location').value;
+    var temp = document.getElementById('location').value.replace(' ', '%20');
+    var url = "https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=" + temp;
 
-    await Promise.all([axios.get(`https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=` + temp)
+    await Promise.all([axios.get(url)
       .then(res => {
         const data = res.data;
-        this.setState({ api1data: data[0].woeid });
-        this.setState({api3data : data.weather_state_abbr})
-        console.log(this.state.api3data)
+        this.setState({ api1data: data[0].woeid, api3data: data.weather_state_abbr,
+        });
+        
       })
+     .catch((error)=>{
+       alert('Invalid City. Please try Again!')
+       console.log(error)
+     })
     ]);
 
 
@@ -37,42 +44,50 @@ export class Weather extends Component {
       .then(res => {
 
         const data2 = res.data;
-        this.setState({ api2data: data2.consolidated_weather });
-     
-      })
+        this.setState({
+          api2data: data2.consolidated_weather,
+          api4data : data2,
+        
 
+        });
+      })
 
 
   }
 
   render() {
-
-    
-    
-   
-
-    
     return (
-        
-      <div>
-        
+
+      <div style={{ alignContent: 'center', textAlign: 'center', width: '100%' }}>
+
         <form onSubmit={this.handleSubmit}>
 
-          <input type="text" placeholder="ex:San Fransisco" id="location" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '300px' }} />
-          <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', background: "linear-gradient(to right bottom, #800000, #174c83)" }} />
+          <input type="text" placeholder="ex:San Francisco" id="location" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%' }} />
+          <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "pink" }} />
 
         </form>
+       <h2> CITY : {this.state.api4data.title}TIMEZONE:{this.state.api4data.timezone}</h2>
 
-    
-                
-            {this.state.api2data.map(record => (
-                    <div>
-                    {record.applicable_date} <br />
-                    {record.air_pressure}<br />
-                    </div>
-            ))}  
+        <table align="center" style={{paddingLeft:'50px', marginLeft:'50px'}} border='2px solid'>
+          <tr>
+            <th style={{ width: '25%' }}>Date</th>
+            <th style={{ width: '25%' }}>Minimum Temp</th>
+            <th style={{ width: '25%' }}>Maximum Temp</th>
+            <th style={{ width: '25%' }}>Weather State</th>
+          </tr>
+          {this.state.api2data.map(record => (
 
+            <tr>
+              <td>{record.applicable_date}</td>
+              <td>{record.min_temp.toFixed(1)}</td>
+              <td>{record.max_temp.toFixed(1)}</td>
+              <td> {record.weather_state_name}</td>
 
+              <td><img src={'http://metaweather.com/static/img/weather/png/64/' + record.weather_state_abbr + '.png'} alt='' /></td>
+            </tr>
+          ))}
+
+        </table>
       </div>
     );
   }

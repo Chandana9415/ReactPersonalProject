@@ -30,24 +30,6 @@ code {
 
 
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.btn:hover {
-  background-color: #ddd;
-}
-
-.btn.active {
-  background-color: #666;
-  color: white;
-}
 
 *{
   margin:0;
@@ -69,7 +51,7 @@ html{
   grid-row-gap: 20px;
 }
   .box{
-    background-color:#333;
+    /* background-color:#333; */
     padding:20px;
     border-radius:10px;
     color:#fff;
@@ -80,8 +62,18 @@ html{
     font-family:sans-serif;
   }
 
-
   * {
+    
     box-sizing: border-box;
+  }
+  .button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    color: yellow;
+  }
+  
+  .button:hover {
+    background-color: #4CAF50; /* Green */
+    color: purple;
   }
   

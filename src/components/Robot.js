@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './index.css'
 export class Robot extends Component {
 
     constructor(props) {
@@ -23,14 +23,18 @@ export class Robot extends Component {
         event.preventDefault();
 
         let temp = 'https://robohash.org/' + document.getElementById('name').value;
+        if(temp.includes("#")){
+            alert('Don\'t hash me please!')
+            
+        }
         this.setState({
             url: temp,
             url2: temp + '/?set=set2',
             url3: temp + '/?set=set3',
             url4: temp + '/?set=set4'
         })
-        
-        this.render();
+
+
 
     }
 
@@ -40,13 +44,18 @@ export class Robot extends Component {
                 <input type="text" placeholder="What robot are you?" id="name" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%', height: '100%' }} />
                 <input type="submit" value="Submit" style={{ fontSize: '100%', height: '100%', width: '100%', background: 'pink', alignContent: 'center' }} />
             </form>
+            <section style={{
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
 
-            <img src={this.state.url} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
-            <img src={this.state.url2} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
-            <img src={this.state.url3} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
-            <img src={this.state.url4} style={{ width: '50%', height: '50%', border: '20px solid black' }} alt="" />
-
-
+            }}>
+                <img src={this.state.url} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
+                <img src={this.state.url2} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
+                <img src={this.state.url3} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
+                <img src={this.state.url4} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
+                
+            </section>
         </div>);
     }
 

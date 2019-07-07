@@ -9,7 +9,9 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
-import './index.css'
+ import './index.css'
+ //import Image from './components/sf2.jpg'
+ import {Image} from 'react-bootstrap';
 
 const routes = [
   {
@@ -40,55 +42,55 @@ const routes = [
 
 class App extends Component {
   render() {
+
+    let imgUrl ="https://images8.alphacoders.com/685/685053.jpg";
+    var background = {backgroundSize : 'cover'};
+    var textStyle = {
+      position: 'absolute', 
+      top: '10%', 
+      left: '20%',
+      width:'65%'
+    };
     return (
+ 
+  <Router>
+      
 
-      <Router>
+                <Image 
+                  style={background} responsive 
+                  src="https://storage.needpix.com/rsynced_images/geometric-background-1514478073tqH.jpg">
+                  
+                </Image>
+                <h1 style={textStyle}>
+            
 
-{/* <div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <h2>Column 3</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>Column 4</h2>
-    <p>Some text..</p>
-  </div>
-</div> */}
-
-        <div class="container">
+        <div class="container" style={{alignContent:'center', alignSelf:'center', height:'100%'}}>
           <div class="box">
-            <Link to="/robot" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none' }}>
+            
+            <Link to="/robot" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}} >
               <h1>ROBOT</h1>
             </Link>
           </div>
           <div class="box">
-            <Link to="/pawn" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none' }}>
+            <Link to="/pawn" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}}>
               <h1>PAWNED?</h1>
             </Link>
           </div>
           <div class="box">
-            <Link to="/expression" style={{ color: 'black', textDecoration: 'none' }}>
+            <Link to="/expression" style={{ color: 'black', textDecoration: 'none'}}>
               <h1>MATH</h1>
             </Link>
           </div>
           <div class="box">
-            <Link to="/weather" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none' }}>
+            <Link to="/weather" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}}>
               <h1>WEATHER</h1>
             </Link>
           </div>
         </div>
 
-
-        <div style={{ display: 'flex' }}>
-          <div style={{ width: '50%' }}>
+          
+        <div style={{ alignContent:'center', alignSelf:'center', width: '100%', height:'100%' }}>
+          
 
           {routes.map((route) => (
               <Route
@@ -98,22 +100,15 @@ class App extends Component {
                 component={route.main}
               />
             ))}
-          </div>
+         
 
-          {/* <div style={{ flex: 2 }}>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                exact={route.exact}
-                component={route.sidebar}
-              />
-            ))}
-          </div> */}
-        </div>
+      
+        </div></h1>
 
-      </Router>
+         </Router>
+     
 
+      // </section>
     );
   }
 }

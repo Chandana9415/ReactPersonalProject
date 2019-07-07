@@ -31,24 +31,31 @@ export class Pawn extends Component{
 
 render(){
     return(<div>
-        Hello world from Pawn
         <form onSubmit={this.handleSubmit}>
 
-<input type="text" placeholder="ex:Enter email ID" id="emailid" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '300px' }} />
-<input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', background: "linear-gradient(to right bottom, #800000, #174c83)" }} />
+<input type="text" placeholder="ex:Enter email ID" id="emailid" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%' }} />
+<input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%',width:'100%', background: "pink" }} />
 
 </form>
+<div style={{height:'300px',width:'100%',border:'1px solid #ccc',overflow:'auto'}}>
+<table border="2px solid">
+<tbody>
+    
+    <tr>
+    <th style={{width:'30%'}}>Domain</th>
+    <th style={{width:'70%'}}>Description</th>
+    </tr>
             {this.state.data.map(function(item,key){
-                    return(<table border="2px solid">
+                    return(
                      <tr style={{fontSize:'50%'}}>
-                     <td> {item.Domain} </td> <br />
+                     <td style={{width:'10%'}}> {item.Domain} </td> 
                      <td>{item.Description}</td>
-                      </tr>
+                     </tr>
                      
-                    </table>
+                   
                         )
             })}
-    </div>);
+    </tbody> </table></div> </div>);
         }
 
 }
