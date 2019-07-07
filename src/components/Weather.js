@@ -62,13 +62,13 @@ export class Weather extends Component {
 
         <form onSubmit={this.handleSubmit}>
 
-          <input type="text" placeholder="ex:San Francisco" id="location" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%' }} />
-          <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "pink" }} />
+          <input type="text" placeholder="ex:San Francisco" id="location" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%',background:'none' }} />
+          <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "lightblue" }} />
 
         </form>
-       <h2> CITY : {this.state.api4data.title}TIMEZONE:{this.state.api4data.timezone}</h2>
+       <h2> CITY : {this.state.api4data.title}(TIMEZONE:{this.state.api4data.timezone})</h2>
 
-        <table align="center" style={{paddingLeft:'50px', marginLeft:'50px'}} border='2px solid'>
+        <table align="center" style={{paddingLeft:'50px', marginLeft:'0px'}} border='2px solid'>
           <tr>
             <th style={{ width: '25%' }}>Date</th>
             <th style={{ width: '25%' }}>Minimum Temp</th>

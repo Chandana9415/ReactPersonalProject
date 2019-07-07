@@ -12,8 +12,15 @@ import {
  import './index.css'
  //import Image from './components/sf2.jpg'
  import {Image} from 'react-bootstrap';
-
+import {Home } from './components/Home'
 const routes = [
+  {
+    path: '/home',
+    exact: true,
+    //sidebar: () => <div></div>,
+    main: () => <h2><Home /></h2>,
+  
+  },
   {
     path: '/robot',
     exact: true,
@@ -58,36 +65,37 @@ class App extends Component {
 
                 <Image 
                   style={background} responsive 
-                  src="https://storage.needpix.com/rsynced_images/geometric-background-1514478073tqH.jpg">
+                  src="https://www.redwallpapers.com/download/original/mesh-triangles-surface-colorful-free-stock-photos-images-hd-wallpaper.jpg">
                   
                 </Image>
                 <h1 style={textStyle}>
-            
+               
 
         <div class="container" style={{alignContent:'center', alignSelf:'center', height:'100%'}}>
-          <div class="box">
-            
-            <Link to="/robot" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}} >
-              <h1>ROBOT</h1>
+        
+          <div class="box" style={{display:'block',borderRadius:'50%'}}>
+        
+            <Link to="/robot">
+              <h1 className="btn-round"><span>ROBOT</span></h1>
             </Link>
           </div>
           <div class="box">
             <Link to="/pawn" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}}>
-              <h1>PAWNED?</h1>
+              <h1 className="btn-round"><span>PAWNED?</span></h1>
             </Link>
           </div>
           <div class="box">
             <Link to="/expression" style={{ color: 'black', textDecoration: 'none'}}>
-              <h1>MATH</h1>
+              <h1 className="btn-round"><span>MATH</span></h1>
             </Link>
           </div>
           <div class="box">
             <Link to="/weather" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}}>
-              <h1>WEATHER</h1>
+              <h1 className="btn-round"><span>WEATHER</span></h1>
             </Link>
           </div>
         </div>
-
+        <Home />
           
         <div style={{ alignContent:'center', alignSelf:'center', width: '100%', height:'100%' }}>
           

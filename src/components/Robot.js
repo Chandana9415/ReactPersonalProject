@@ -41,8 +41,8 @@ export class Robot extends Component {
     render() {
         return (<div style={{ textAlign: "center" }}>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="What robot are you?" id="name" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%', height: '100%' }} />
-                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '100%', width: '100%', background: 'pink', alignContent: 'center' }} />
+                <input type="text" placeholder="What's your robot name?" id="name" onChange={this.handleChange} style={{ fontSize: '80%', width: '100%', height: '100%', background:'none', border:'none', alignContent:'center', textAlign:'center'}} autoFocus />
+                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '100%', width: '100%', background: 'lightblue', alignContent: 'center' }} />
             </form>
             <section style={{
                 backgroundPosition: 'center',

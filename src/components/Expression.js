@@ -47,9 +47,9 @@ export class Expression extends Component {
 
             <form onSubmit={this.handleSubmit}>
 
-                <input type="text" placeholder="" id="exp" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%', height: '100px' }} />
+                <input type="text" placeholder="Let's do some math! Enter your expression here." id="exp" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%', height: '100px' }} />
 
-                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "pink", textAlign:'center' }} />
+                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "lightblue", textAlign:'center' }} />
 
             </form>
 

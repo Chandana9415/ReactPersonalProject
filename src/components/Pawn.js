@@ -33,11 +33,11 @@ render(){
     return(<div>
         <form onSubmit={this.handleSubmit}>
 
-<input type="text" placeholder="ex:Enter email ID" id="emailid" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%' }} />
-<input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%',width:'100%', background: "pink" }} />
+<input type="text" placeholder="Let's check if you got pawned. Enter your email here!" id="emailid" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%', background:'none' }} autoFocus />
+<input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%',width:'100%', background: "lightblue" }} />
 
 </form>
-<div style={{height:'300px',width:'100%',border:'1px solid #ccc',overflow:'auto'}}>
+<div style={{height:'400px',width:'100%',overflow:'auto'}}>
 <table border="2px solid">
 <tbody>
     
