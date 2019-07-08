@@ -5,7 +5,7 @@ export class Home extends Component{
     render(){
         return(<div>
         <div className="typewriter">
-            <h3>Hi, I'm Chandana and I'm excited to meet you today!</h3>
+            <h3>Hi, I'm Chandana and I'm excited to meet you!</h3>
             <h3>I look forward to your REACT-ion :)</h3>
 
             </div>
