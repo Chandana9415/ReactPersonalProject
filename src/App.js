@@ -54,7 +54,7 @@ class App extends Component {
     var background = {backgroundSize : 'cover'};
     var textStyle = {
       position: 'absolute', 
-      top: '10%', 
+      top: '5%', 
       left: '20%',
       width:'65%'
     };
@@ -72,7 +72,7 @@ class App extends Component {
                
 
         <div class="container" style={{alignContent:'center', alignSelf:'center', height:'100%'}}>
-        
+         
           <div class="box" style={{display:'block',borderRadius:'50%'}}>
         
             <Link to="/robot">
@@ -95,7 +95,7 @@ class App extends Component {
             </Link>
           </div>
         </div>
-        <Home />
+       
           
         <div style={{ alignContent:'center', alignSelf:'center', width: '100%', height:'100%' }}>
           

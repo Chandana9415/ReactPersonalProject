@@ -62,17 +62,17 @@ export class Weather extends Component {
 
         <form onSubmit={this.handleSubmit}>
 
-          <input type="text" placeholder="ex:San Francisco" id="location" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%',background:'none' }} />
-          <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "lightblue" }} />
+          <input type="text" placeholder="ex:San Francisco" id="location" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%',background:'none' }} autoFocus />
+          <input type="submit" value="SUBMIT" style={{ fontSize: '100%', height: '50%', width: '100%', background: "none",fontFamily: 'Arial rounded' }} />
 
         </form>
-       <h2> CITY : {this.state.api4data.title}(TIMEZONE:{this.state.api4data.timezone})</h2>
+       <h3> CITY : {this.state.api4data.title}(Timezone:{this.state.api4data.timezone})</h3>
 
         <table align="center" style={{paddingLeft:'50px', marginLeft:'0px'}} border='2px solid'>
           <tr>
             <th style={{ width: '25%' }}>Date</th>
-            <th style={{ width: '25%' }}>Minimum Temp</th>
-            <th style={{ width: '25%' }}>Maximum Temp</th>
+            <th style={{ width: '25%' }}>Min Temp</th>
+            <th style={{ width: '25%' }}>Max Temp</th>
             <th style={{ width: '25%' }}>Weather State</th>
           </tr>
           {this.state.api2data.map(record => (

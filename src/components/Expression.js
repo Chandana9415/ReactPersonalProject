@@ -43,22 +43,28 @@ export class Expression extends Component {
 
 
            
-                <select id="select" style={{ width: '100%', textAlign: 'center', maxWidth: '100%', }}>{listItems}</select> 
+                <select id="select" style={{ width: '100%', textAlign: 'center', maxWidth: '100%',textAlign:'center',alignContent:'content' }}>{listItems}</select> 
 
             <form onSubmit={this.handleSubmit}>
 
-                <input type="text" placeholder="Let's do some math! Enter your expression here." id="exp" onChange={this.handleChange} style={{ border: '2px solid black', fontSize: '80%', width: '100%', height: '100px' }} />
+                <input type="text" placeholder="Let's do some math! Enter your expression here." id="exp" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%', height: '100px', background:'none',alignContent:'center',textAlign:'center' }} autoFocus />
 
-                <input type="submit" value="Submit" style={{ fontSize: '100%', height: '50%', width: '100%', background: "lightblue", textAlign:'center' }} />
+                <input type="submit" value="SUBMIT" style={{ fontSize: '100%', height: '50%', width: '100%', background: "none", textAlign:'center',fontFamily: 'Arial rounded'}} />
 
             </form>
 
             <div style={{ alignContent: 'center', width: '100%',textAlign:'center' }}>
-
-                Operation:{this.state.data.operation}<br />
-                Expression:{this.state.data.expression}<br />
-                Result:{this.state.data.result}<br />
-            </div>
+    <table border="1px border" style={{marginLeft:'250px'}}>
+        <tr>
+            <th>Operation</th>
+            <th>Expression</th>
+            <th>Result</th>
+            </tr>
+                <tr>
+                    <td>{this.state.data.operation}<br /></td>
+             <td> {this.state.data.expression}<br /></td> 
+              <td> {this.state.data.result}<br /></td>
+                </tr>  </table>   </div>
         </div>)
     }
 
