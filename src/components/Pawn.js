@@ -30,20 +30,21 @@ export class Pawn extends Component{
     
 
 render(){
-    return(<div>
+    return(<div  style={{ textAlign: "center" }}>
         <form onSubmit={this.handleSubmit}>
 
-<input type="text" placeholder="Let's check if you got pawned. Enter your email here!" id="emailid" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%', background:'none',textAlign:'center',alignContent:'center' }} autoFocus />
-<input type="submit" value="SUBMIT" style={{ fontSize: '100%', height: '50%',width:'100%', background: "none",fontFamily: 'Arial rounded'}}  />
+<input type="text" className="name" placeholder="Enter your email here!" id="emailid" onChange={this.handleChange} autoFocus />
+<br />
+<input type="submit" value="SUBMIT" className="submit"  />
 
 </form>
 <div style={{height:'400px',width:'100%',overflow:'auto'}}>
-<table border="2px solid">
+<table border="2px solid" align="center" style={{marginLeft:'60px'}}>
 <tbody>
     
     <tr>
-    <th style={{width:'30%'}}>Domain</th>
-    <th style={{width:'70%'}}>Description</th>
+    <th>Domain</th>
+    <th>Description</th>
     </tr>
             {this.state.data.map(function(item,key){
                     return(

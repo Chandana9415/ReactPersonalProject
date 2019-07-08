@@ -14,40 +14,36 @@ import {
 import {Home } from './components/Home';
 import { Redirect } from 'react-router-dom'
 
+
+
 const routes = [
   {
     path: '/home',
     
     exact: true,
-    //sidebar: () => <div></div>,
     main: () => <h2><Home /></h2>,
   
   },
   {
     path: '/robot',
     exact: true,
-    //sidebar: () => <div></div>,
     main: () => <h2><Robot /></h2>,
   
   },
   {
     path: '/pawn',
-    //sidebar: () => <div></div>,
     main: () => <h2><Pawn /></h2>
   },
   {
     path: '/expression',
-    //sidebar: () => <div></div>,
     main: () => <h2><Expression /></h2>
   },
   {
     path: '/weather',
-    //sidebar: () => <div>Hello World</div>,
     main: () => <h2><Weather /></h2>
   }
 
 ]
-
 
 class App extends Component {
   render() {
@@ -59,6 +55,11 @@ class App extends Component {
       left: '20%',
       width:'65%'
     };
+
+
+    
+
+    
     return (
  
   <Router>
@@ -116,7 +117,6 @@ class App extends Component {
          </Router>
      
 
-      // </section>
     );
   }
 }

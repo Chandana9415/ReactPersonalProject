@@ -23,9 +23,9 @@ export class Robot extends Component {
         event.preventDefault();
 
         let temp = 'https://robohash.org/' + document.getElementById('name').value;
-        if(temp.includes("#")){
+        if (temp.includes("#")) {
             alert('Don\'t hash me please!')
-            
+
         }
         this.setState({
             url: temp,
@@ -41,20 +41,23 @@ export class Robot extends Component {
     render() {
         return (<div style={{ textAlign: "center" }}>
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="What's your robot name?" id="name" onChange={this.handleChange} style={{ fontSize: '80%', width: '100%', height: '100%', background:'none', border:'none', alignContent:'center', textAlign:'center'}} autoFocus />
-                <input type="submit" value="SUBMIT" style={{ height: '100%', width: '100%', background: 'none', alignContent: 'center',fontFamily: 'Arial rounded' }} />
+                <input type="text" placeholder="What's your robot name?" id="name" className="name" onChange={this.handleChange} autoFocus />
+                <br />
+                <input type="submit" value="SUBMIT" className="submit" />
+                <br />
             </form>
+            <br />
             <section style={{
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
 
             }}>
-                <img src={this.state.url} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
-                <img src={this.state.url2} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
-                <img src={this.state.url3} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
-                <img src={this.state.url4} style={{ width: '25%', height: '50%', border: '10px solid black' }} alt="" />
-                
+                <img src={this.state.url} className='img' alt="" />
+                <img src={this.state.url2} className='img' alt="" />
+                <img src={this.state.url3} className='img'alt="" />
+                <img src={this.state.url4} className='img' alt="" />
+
             </section>
         </div>);
     }

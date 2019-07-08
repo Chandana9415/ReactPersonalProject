@@ -5,12 +5,12 @@ export class Home extends Component{
     render(){
         return(<div>
         <div className="typewriter">
-            <h3>Hi, I'm Chandana and I'm so excited to meet you today!</h3>
+            <h3>Hi, I'm Chandana and I'm excited to meet you today!</h3>
             <h3>I look forward to your REACT-ion :)</h3>
 
             </div>
             <div className="typewriter2">
-            <h3 className="typewriter2">Go on, click one of the circles.</h3>
+            <h3>Go on, click on one of the circles for me.</h3>
             </div>
             
              <div style={{alignContent:'center',textAlign:'center'}}>

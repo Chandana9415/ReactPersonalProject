@@ -19,7 +19,6 @@ export class Weather extends Component {
   }
 
   async handleSubmit(event) {
-    console.log("Button clicked yay, time to get the woied")
     event.preventDefault();
     var temp = document.getElementById('location').value.replace(' ', '%20');
     var url = "https://cors-git.herokuapp.com/https://www.metaweather.com/api/location/search/?query=" + temp;
@@ -62,11 +61,11 @@ export class Weather extends Component {
 
         <form onSubmit={this.handleSubmit}>
 
-          <input type="text" placeholder="ex:San Francisco" id="location" onChange={this.handleChange} style={{ border: 'none', fontSize: '80%', width: '100%',background:'none' }} autoFocus />
-          <input type="submit" value="SUBMIT" style={{ fontSize: '100%', height: '50%', width: '100%', background: "none",fontFamily: 'Arial rounded' }} />
+          <input type="text" className="name" placeholder="Where are you at right now?" id="location" onChange={this.handleChange}  autoFocus />
+          <input type="submit" className="submit" value="SUBMIT"  />
 
         </form>
-       <h3> CITY : {this.state.api4data.title}(Timezone:{this.state.api4data.timezone})</h3>
+       <h1> CITY : {this.state.api4data.title}(Timezone:{this.state.api4data.timezone})</h1>
 
         <table align="center" style={{paddingLeft:'50px', marginLeft:'0px'}} border='2px solid'>
           <tr>
