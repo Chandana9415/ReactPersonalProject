@@ -11,10 +11,13 @@ import {
 } from 'react-router-dom'
  import './index.css'
  import {Image} from 'react-bootstrap';
-import {Home } from './components/Home'
+import {Home } from './components/Home';
+import { Redirect } from 'react-router-dom'
+
 const routes = [
   {
     path: '/home',
+    
     exact: true,
     //sidebar: () => <div></div>,
     main: () => <h2><Home /></h2>,
@@ -59,7 +62,7 @@ class App extends Component {
     return (
  
   <Router>
-      
+      <Redirect from="/" to="/home" />
 
                 <Image 
                   style={background} responsive
