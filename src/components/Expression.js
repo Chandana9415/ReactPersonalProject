@@ -35,7 +35,7 @@ export class Expression extends Component {
     }
 
     render() {
-        let listItems = this.state.list.map((entry) =>
+        const listItems = this.state.list.map((entry) =>
             <option key={entry} > {entry} </option>
         );
         return (<div>

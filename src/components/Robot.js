@@ -23,8 +23,8 @@ export class Robot extends Component {
         event.preventDefault();
 
         let temp = 'https://robohash.org/' + document.getElementById('name').value;
-        if (temp.includes("#")) {
-            alert('Don\'t hash me please!')
+        if (temp.includes("#") || temp.includes("?") || temp.includes("%")) {
+            alert('Don\'t hash or question me please! Try again.')
 
         }
         this.setState({

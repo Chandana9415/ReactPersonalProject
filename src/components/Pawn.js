@@ -24,6 +24,10 @@ export class Pawn extends Component{
             this.setState({data: data })
             console.log(data)
          })
+         .catch((error) => {
+            alert('Don\'t cheat. Enter your correct email!')
+            console.log(error)
+        })
         ]);
     
     }
@@ -33,7 +37,7 @@ render(){
     return(<div  style={{ textAlign: "center" }}>
         <form onSubmit={this.handleSubmit}>
 
-<input type="text" className="name" placeholder="Enter your email here!" id="emailid" onChange={this.handleChange} autoFocus />
+<input type="text" className="name" placeholder="Enter your email here!" id="emailid" onChange={this.handleChange} autoFocus required/>
 <br />
 <input type="submit" value="SUBMIT" className="submit"  />
 
