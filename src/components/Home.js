@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './index.css'
 export class Home extends Component{
 
@@ -15,9 +14,10 @@ export class Home extends Component{
             </div>
             
              <div style={{alignContent:'center',textAlign:'center'}}>
-             <a href="https://www.linkedin.com/in/chandana-ravichandra"><i class="fa fa-linkedin"></i></a>
-             <a href="https://github.com/Chandana9415"><i class="fa fa-github"></i></a>
-             <a href="chandanaravichandra15@gmail.com"><i class="fa fa-envelope"></i></a>
+             <a href="https://www.linkedin.com/in/chandana-ravichandra"><i className="fa fa-linkedin"></i></a>
+             <a href="https://github.com/Chandana9415"><i className="fa fa-github"></i></a>
+             <a href="mailto:chandanaravichandra15@gmail.com"><i className="fa fa-envelope"></i></a>
+
              </div>
 
            

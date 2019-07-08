@@ -43,7 +43,7 @@ export class Expression extends Component {
 
 
            
-                <select id="select" style={{ width: '100%', textAlign: 'center', maxWidth: '100%',textAlign:'center',alignContent:'content' }}>{listItems}</select> 
+                <select id="select" style={{ width: '100%', maxWidth: '100%',textAlign:'center',alignContent:'content' }}>{listItems}</select> 
 
             <form onSubmit={this.handleSubmit}>
 

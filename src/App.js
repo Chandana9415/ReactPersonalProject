@@ -10,7 +10,6 @@ import {
   Link,
 } from 'react-router-dom'
  import './index.css'
- //import Image from './components/sf2.jpg'
  import {Image} from 'react-bootstrap';
 import {Home } from './components/Home'
 const routes = [
@@ -50,7 +49,6 @@ const routes = [
 class App extends Component {
   render() {
 
-    let imgUrl ="https://images8.alphacoders.com/685/685053.jpg";
     var background = {backgroundSize : 'cover'};
     var textStyle = {
       position: 'absolute', 
@@ -64,32 +62,31 @@ class App extends Component {
       
 
                 <Image 
-                  style={background} responsive 
+                  style={background} responsive
                   src="https://www.redwallpapers.com/download/original/mesh-triangles-surface-colorful-free-stock-photos-images-hd-wallpaper.jpg">
-                  
                 </Image>
                 <h1 style={textStyle}>
                
 
-        <div class="container" style={{alignContent:'center', alignSelf:'center', height:'100%'}}>
+        <div className="container" style={{alignContent:'center', alignSelf:'center', height:'100%'}}>
          
-          <div class="box" style={{display:'block',borderRadius:'50%'}}>
+          <div className="box" style={{display:'block',borderRadius:'50%'}}>
         
             <Link to="/robot">
               <h1 className="btn-round"><span>ROBOT</span></h1>
             </Link>
           </div>
-          <div class="box">
+          <div className="box">
             <Link to="/pawn" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}}>
               <h1 className="btn-round"><span>PAWNED?</span></h1>
             </Link>
           </div>
-          <div class="box">
+          <div className="box">
             <Link to="/expression" style={{ color: 'black', textDecoration: 'none'}}>
               <h1 className="btn-round"><span>MATH</span></h1>
             </Link>
           </div>
-          <div class="box">
+          <div className="box">
             <Link to="/weather" style={{ color: 'black', fontWeight: 'bold', textDecoration: 'none'}}>
               <h1 className="btn-round"><span>WEATHER</span></h1>
             </Link>
